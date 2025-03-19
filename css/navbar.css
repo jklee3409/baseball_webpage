@@ -1,20 +1,19 @@
-* {
-  background-color: black;
-}
-
 .navbar {
   position: relative;
-  margin-top: 30px;
   width: 100%;
-  height: 70px;
+  height: 90px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.85);
   display: flex;
   justify-content: space-between;
   padding-bottom: 20px;
   border-bottom: 1px solid slategray; 
   overflow: visible;
   z-index: 1;
+}
+
+.nav_button, .main_logo, .nav_item, .navbar-left, .navbar-center, .navbar-right {
+  background-color: transparent;
 }
 
 .navbar-center {
@@ -26,7 +25,7 @@
 
 .navbar-left,
 .navbar-right {
-  padding-top: 35px;
+  padding-top: 50px;
   display: flex;
   gap: 110px
 }
@@ -40,6 +39,7 @@
 }
 
 .main_logo {
+  padding-top: 20px;
   width: 100px;
   height: 80px;
   object-fit: contain; 
@@ -50,6 +50,12 @@
 
 .main_logo:hover {
   transform: scale(1.07);
+}
+
+.nav_item {
+  position: relative;
+  overflow: visible;
+  z-index: 3;
 }
 
 .nav_button {
@@ -65,17 +71,11 @@
   color: #D47534;
 }
 
-.nav_item {
-  position: relative;
-  overflow: visible;
-  z-index: 3;
-}
-
 .submenu {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #D47534;
+  background-color: black;
   border-radius: 6px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.3);
   display: none;
