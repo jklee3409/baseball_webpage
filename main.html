@@ -14,8 +14,23 @@
       body {
         margin: 0;
         padding: 0;
-        overflow: hidden; 
-        background-color: black; 
+        overflow: hidden;
+        background-color: black;
+      }
+      .background-video {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+        z-index: -1;
+      }
+      #navbar-container {
+        position: fixed;
+        width: 100%;
+        z-index: 9999;
       }
     </style>
 
@@ -23,9 +38,23 @@
   </head>
 
   <body>
-    <iframe
-      src="navbar.html"
-      style="width: 100%; height: 1000px; border: none"
-    ></iframe>
+    <div id="navbar-container"></div>
+
+    <video class="background-video" autoplay loop muted playsinline>
+      <source src="movie_eagles.mp4" type="video/mp4" />
+    </video>
+
+    <script>
+      async function loadNavbar() {
+        try {
+          const response = await fetch("navbar.html");
+          const html = await response.text();
+          document.getElementById("navbar-container").innerHTML = html;
+        } catch (err) {
+          console.error("Navbar 로딩 실패:", err);
+        }
+      }
+      loadNavbar();
+    </script>
   </body>
 </html>
